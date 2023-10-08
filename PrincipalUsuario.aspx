@@ -12,7 +12,14 @@
         Tus medicamentos son los siguientes:<br />
         <br />
         <br />
-        
+        Aqui se va a mostrar un gridview de los datos generales de los medicamentos 
+        <br />
+        <br />
+        Mostrar medicamentos que se deben tomar y un botton para registrar que se tomo (meter al historial) 
+
+        <br />
+        <br />
+        Aqui mostrar los mensajes (los mensajes son creados por el admin o automaticamente cuando se checa si se fallo una toma de medicamento) 
         
         <asp:GridView ID="GridView1" runat="server">
            

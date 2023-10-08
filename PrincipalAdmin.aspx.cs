@@ -11,7 +11,6 @@ namespace GestionadorMedicamentos
 {
     public partial class PrincipalAdmin : System.Web.UI.Page
     {
-        int idU = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idAdmin"] == null || Session["nombreAdmin"] == null)
@@ -20,7 +19,10 @@ namespace GestionadorMedicamentos
             }
 
 
-            pnlContent.Visible = false;
+            if(Session["idUSelected"] == null)
+            {
+                pnlContent.Visible = false;
+            }
 
         }
 
@@ -37,7 +39,7 @@ namespace GestionadorMedicamentos
             }
 
             fechafin = TextBox8.Text;//Fecha de fin
-            if (nMed != "" && fechafin != "" && freq != -1 && idU != -1)
+            if (nMed != "" && fechafin != "" && freq != -1 && Session["idUSelected"] != null)
             {
 
                 String query = "INSERT INTO medicamento VALUES ((SELECT ISNULL(MAX(cMed), 0) + 1 FROM Medicamento), ?, ?, CURRENT_TIMESTAMP, ?, ?)";
@@ -46,7 +48,7 @@ namespace GestionadorMedicamentos
                 comando.Parameters.AddWithValue("nombre", nMed);
                 comando.Parameters.AddWithValue("frecuencia", freq);
                 comando.Parameters.AddWithValue("fechaFin", fechafin);
-                comando.Parameters.AddWithValue("idU", idU);
+                comando.Parameters.AddWithValue("idU", Session["idUSelected"]);
                 comando.ExecuteNonQuery();
 
 
@@ -75,7 +77,7 @@ namespace GestionadorMedicamentos
                 OdbcConnection conexion = new ConexionBD().con;
                 OdbcCommand comando = new OdbcCommand(query, conexion);
                 comando.Parameters.AddWithValue("nombre", TextBox3.Text);
-                comando.Parameters.AddWithValue("idU", Session["idU"]);
+                comando.Parameters.AddWithValue("idU", Session["idUSelected"]);
                 comando.ExecuteNonQuery();
 
                 Label2.Text = "Eliminación realizada";
@@ -104,7 +106,7 @@ namespace GestionadorMedicamentos
                 comando.Parameters.AddWithValue("frecuenciaMNueva", freq);
                 comando.Parameters.AddWithValue("fechaFinNueva", TextBox7.Text);
                 comando.Parameters.AddWithValue("nombreMedAnt", TextBox4.Text);
-                comando.Parameters.AddWithValue("idU", idU);
+                comando.Parameters.AddWithValue("idU", Session["idUSelected"]);
                 comando.ExecuteNonQuery();
                 TextBox4.Text = "";
                 TextBox5.Text = "";
@@ -134,7 +136,7 @@ namespace GestionadorMedicamentos
             OdbcDataReader lector = comando.ExecuteReader();
             if (lector.HasRows)
             {
-                idU = lector.GetInt32(0);
+                Session.Add("idUSelected", lector.GetInt32(0));
                 String nombreU = lector.GetString(1);
                 String passwrdU = lector.GetString(2);
 

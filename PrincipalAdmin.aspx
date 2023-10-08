@@ -24,11 +24,9 @@
             <hr />
             <br />
             <asp:Panel ID="pnlContent" runat="server">
-
-                
                 //Add borrar usuario igual 
-
-             
+                <br />
+                <br />
                 Nombre de medicamento:<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                 <br />
                 <br />
