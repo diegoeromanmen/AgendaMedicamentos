@@ -16,11 +16,6 @@ namespace GestionadorMedicamentos
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             String query = "select idU, nombre from Usuario where correo= ? and passwrd=?";
@@ -51,9 +46,14 @@ namespace GestionadorMedicamentos
             lector.Close();
         }
 
-        protected void Button2_Click1(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegistroUsuario.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginAdmin.aspx");
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)

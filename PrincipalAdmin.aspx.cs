@@ -138,6 +138,7 @@ namespace GestionadorMedicamentos
                 String nombreU = lector.GetString(1);
                 String passwrdU = lector.GetString(2);
 
+                Label1.Text = "Usuario: " + nombreU;
                 pnlContent.Visible = true;
 
             }

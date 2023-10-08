@@ -15,22 +15,9 @@ namespace GestionadorMedicamentos
             {
                 Response.Redirect("Inicio.aspx");
             }
+
+
         }
-
-        protected void medClick(object sender, EventArgs e)
-        {
-            LinkButton lnk = sender as LinkButton;
-            if (lnk != null)
-            {
-                // Store the medicine ID in session
-                Session["MedicineID"] = lnk.CommandArgument;
-
-                // Redirect to the target page
-                Response.Redirect("TargetPage.aspx");
-            }
-        }
-
-
 
         protected void Button1_Click(object sender, EventArgs e)
         {
