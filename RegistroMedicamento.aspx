@@ -24,9 +24,7 @@
                 <asp:ListItem Value="2">Cada 2 horas</asp:ListItem>
             </asp:DropDownList>
             <br />
-            <br />
-            Cuantas pastillas tiene
-            <br />
+            <br />           
             <br />
             Introduzca la fecha de termino de su tratamiento: (MES/DÍA/AÑO)<br />
             <asp:TextBox ID="TextBox10" runat="server" OnTextChanged="TextBox10_TextChanged"></asp:TextBox>
