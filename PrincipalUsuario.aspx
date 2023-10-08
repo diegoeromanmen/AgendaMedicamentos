@@ -12,17 +12,8 @@
         Tus medicamentos son los siguientes:<br />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
-            <Columns>
-                <asp:TemplateField HeaderText="Name">
-                    <ItemTemplate>
-                        
-                    </ItemTemplate>
-                   </asp:TemplateField>
-                <asp:BoundField DataField="freq" HeaderText="Freccuencia" />
-                <asp:BoundField DataField="fechaFin" HeaderText="Fecha Fin" />
-            </Columns>
-        </asp:GridView>
+        <asp:GridView ID="GridView1" runat="server">
+           </asp:GridView>
 
         <hr />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Registrar nuevo medicamento" />

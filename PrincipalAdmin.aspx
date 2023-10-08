@@ -47,13 +47,15 @@
                 <br />
                 Nombre nuevo de medicamento:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                 <br />
-                Nueva frecuencia:<asp:DropDownList ID="DropDownList3" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                Nueva frecuencia:
+                <asp:DropDownList ID="DropDownList3" runat="server">
                     <asp:ListItem Value="168">Cada 7 días</asp:ListItem>
                     <asp:ListItem Value="48">Cada 2 días</asp:ListItem>
                     <asp:ListItem Value="24">Cada 24 horas</asp:ListItem>
                     <asp:ListItem Value="8">Cada 8 horas</asp:ListItem>
                     <asp:ListItem Value="2">Cada 2 horas</asp:ListItem>
                 </asp:DropDownList>
+
                 <br />
                 Nueva fecha de termino de tratamiento: (MES/DÍA/AÑO)<br />
                 <asp:TextBox ID="TextBox7" runat="server" OnTextChanged="TextBox7_TextChanged"></asp:TextBox>
@@ -69,7 +71,8 @@
                 <br />
                 Nombre de medicamento:<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                 <br />
-                Frecuencia<asp:DropDownList ID="DropDownList4" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                Frecuencia
+                <asp:DropDownList ID="DropDownList4" runat="server" >
                     <asp:ListItem Value="168">Cada 7 días</asp:ListItem>
                     <asp:ListItem Value="48">Cada 2 días</asp:ListItem>
                     <asp:ListItem Value="24">Cada 24 horas</asp:ListItem>
